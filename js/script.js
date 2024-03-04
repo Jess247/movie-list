@@ -27,10 +27,10 @@ function render(movies) {
                     <div class="grid">
                         <h2>${data.Title}</h2>
                         <p class="rating"><i class="fa-solid fa-star"></i> ${data.imdbRating}</p>
-                        <p class="length">${data.Runtime}</p>
+                        <p class="runtime">${data.Runtime}</p>
                         <p class="genre">${data.Genre}</p>
                         <button class="add-movie-btn"><i class="fa-solid fa-circle-plus"></i> Watchlist</button>
-                        <p class="description">${data.Plot}</p>
+                        <p class="plot">${data.Plot}</p>
                     </div>
                 </div>`
             })

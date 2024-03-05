@@ -26,6 +26,7 @@ document.addEventListener("click", (e) =>{
                 .then(res => res.json())
                 .then(data => {
                     if(data.Response === "True") {
+                        movieResults.innerHTML = ""
                         renderSearch(data.Search)
                         searchField.value = ""
                     } else {

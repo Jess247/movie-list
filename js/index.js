@@ -25,8 +25,14 @@ document.addEventListener("click", (e) =>{
             fetch (`http://www.omdbapi.com/?&apikey=276924e5&s=${searchfield.value}`)
                 .then(res => res.json())
                 .then(data => {
-                    renderSearch(data.Search)
-                    searchField.value = ""
+                    if(data.Response === "True") {
+                        renderSearch(data.Search)
+                        searchField.value = ""
+                    } else {
+                        movieResults.innerHTML = `
+                        <p class="empty">Unable to find what you're looking for. Please try another search.</p>`
+                    }
+                    
                 })
         }
     }

@@ -13,20 +13,25 @@
 </head>
 <body>
     <header class="header">
-        <h1>Find your film</h1>
-        <a href="./pages/watchlist.html">My Watchlist</a>
-        <div class="searchbar">
+        <div class="header-container">
+           <h1>Find your film</h1>
+            <a href="./pages/watchlist.html">My Watchlist</a>
+        </div>
+        <div class="searchbar container">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input id="searchfield" class="searchfield" type="text" aria-label="Enter a film title" placeholder="Search for a movie">
             <input id="search-btn" class="search-btn" type="button" value="Search">
         </div>
     </header>
-    <section class="movie-results">
+    <section class="movie-results container">
         <div class="empty">
             <i class="fa-solid fa-film fa-5x"></i>
             <p>Start exploring</p>
         </div>
     </section>
-    <script src="./js/index.js" type="module"></script>
+    <section class="modal hidden">
+        <p>Movie has been added to your watchlist.</p>
+    </section>
+    <script src="./js/index.js" ></script>
 </body>
 </html>

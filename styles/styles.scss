@@ -21,6 +21,9 @@ input, button {
     text-decoration: underline;
 }
 
+.container {
+    max-width: 800px;
+}
 .header {
     color: #FFFFFF;
     background: url("https://images.unsplash.com/photo-1628432136678-43ff9be34064?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -28,11 +31,17 @@ input, button {
     background-position-y: 20%;
     background-size: cover;
     box-shadow: inset 0 0 0 2000px rgba(25, 25, 25, 0.6);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 30vh;
     padding: 0 2.5em;
+
+    .header-container {
+        max-width: 800px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     h1 {
         font-size: 3.2rem;
@@ -154,6 +163,18 @@ input, button {
     a:hover {
         text-decoration: underline;
     }
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translatex(-50%);
+    background: rgba(25, 25, 25, 0.6);
+    color: #f9fafb;
+    padding: 1.5em 1em;
+    border-radius: 6px;
 }
 
 .hidden {

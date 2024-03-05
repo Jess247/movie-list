@@ -2,7 +2,8 @@ const searchField = document.querySelector("#searchfield")
 const searchBtn = document.querySelector("#search-btn")
 const movieResults =  document.querySelector(".movie-results")
 const emptyListEl = document.querySelector(".empty")
-export const watchlist = []
+const modal = document.querySelector(".modal")
+const watchlist = []
 
 
 document.addEventListener("click", (e) =>{
@@ -11,8 +12,8 @@ document.addEventListener("click", (e) =>{
         fetch(`http://www.omdbapi.com/?&apikey=276924e5&i=${movieId}`)
             .then(res => res.json())
             .then(movie => {
-                console.log(movie)
-
+                modal.classList.remove("hidden")
+                setTimeout(() => modal.classList.add("hidden"), 3000)
                 watchlist.push(movie)
                 localStorage.setItem("movies",JSON.stringify(watchlist))
             })

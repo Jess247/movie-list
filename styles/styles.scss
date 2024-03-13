@@ -1,13 +1,14 @@
-@import "resets";
+@import "resets", "variables";
+
 
 body {
     min-height: 100vh;
-    font-family: "Inter", sans-serif;
+    @include font;
 
 }
 
 input, button {
-    font-family: "Inter", sans-serif;
+    @include font;
 }
 
 .btn{
@@ -25,7 +26,7 @@ input, button {
     max-width: 800px;
 }
 .header {
-    color: #FFFFFF;
+    color: $font-clr-white;
     background: url("https://images.unsplash.com/photo-1628432136678-43ff9be34064?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-repeat: no-repeat;
     background-position-y: 20%;
@@ -38,9 +39,7 @@ input, button {
         max-width: 800px;
         height: 100%;
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-between;
     }
 
     h1 {
@@ -48,8 +47,9 @@ input, button {
 
     }
     a {
-        color: #FFFFFF;
+        color: $font-clr-white;
         text-decoration: none;
+        font-weight: 600;
     }
 
     a:hover {
@@ -57,18 +57,17 @@ input, button {
     }
 
     .searchbar {
-        color: #d1d5db;
-        background: #FFFFFF;
+        color: $border-clr;
+        background: $font-clr-white;
         width: 80%;
         height: 2.37em;
         border-radius: 6px;
-        border: .5px solid #d1d5db;
+        border: .5px solid $border-clr;
         position: absolute;
         top: 28%;
         right: 50%;
         transform: translateX(50%);
-        display: flex;
-        align-items: center;
+        @include flex-between;
 
         .fa-magnifying-glass {
             padding: .5em;
@@ -80,27 +79,30 @@ input, button {
             height: 100%;
             padding: .3em .5em;
             border: none;
+            color: $font-clr-light;
         }
 
         .searchfield:focus {
             outline: none;
-            border: .5px solid #cdcdcd;
+            border: .5px solid $accent-clr;
         }
 
         .searchfield, .search-btn {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .search-btn {
             width: 20%;
             height: 100%;
             border: none;
-            border-left: 1px solid #d1d5db;
-            background: #f9fafb;
+            border-radius: 6px;
+            border-left: 1px solid $border-clr;
+            background: $bg-light;
+            color: $font-clr-medium;
         }
 
         .search-btn:hover, .search-btn:active {
-            background-color: #cdcdcd;
+            background-color: $hover-clr;
         }
     }
 }
@@ -114,13 +116,13 @@ input, button {
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
-        color: #d1d5db;
+        color: $border-clr;
     }
 
     .movie {
         display: flex;
         padding-bottom: 1.2em;
-        border-bottom: 1px solid #d1d5db;
+        border-bottom: 1px solid $border-clr;
         margin-top: 1.2em;
 
         img {
@@ -144,7 +146,7 @@ input, button {
             .plot{grid-area: plot;}
 
             .fa-star {
-                color: gold;
+                color: $star-icon;
             }
         }
     }
@@ -152,11 +154,16 @@ input, button {
 
 .watchlist {
     .empty {
-        top: 60%;
+        top: 50%;
+        height: 5em;
+
+    }
+    p {
+        margin-bottom: 1em;
     }
 
     a {
-        color: invert(#FFFFFF);
+        color: invert($font-clr-white);
         text-decoration: none;
     }
 
@@ -166,11 +173,7 @@ input, button {
 }
 
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%);
-    transform: translatex(-50%);
+    @include position-center;
     background: rgba(25, 25, 25, 0.6);
     color: #f9fafb;
     padding: 1.5em 1em;

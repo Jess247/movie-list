@@ -1,0 +1,34 @@
+$font-clr-white: #FFFFFF;
+$font-clr-light: #6B7280;
+$font-clr-medium: #374151;
+$font-clr-dark: #000000;
+$border-clr: #d1d5db;
+$icon-clr: #DFDDDD;
+$star-icon: #FEC654;
+$accent-clr: #7476f6;
+$bg-light: #f9fafb;
+$hover-clr: #cdcdcd;
+
+@mixin font {
+    font-family: "Inter", sans-serif;
+}
+
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translatex(-50%);
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

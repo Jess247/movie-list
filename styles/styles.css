@@ -53,6 +53,7 @@ input, button {
 .header a {
   color: #FFFFFF;
   text-decoration: none;
+  font-weight: 600;
 }
 .header a:hover {
   text-decoration: underline;
@@ -69,6 +70,7 @@ input, button {
   right: 50%;
   transform: translateX(50%);
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .header .searchbar .fa-magnifying-glass {
@@ -80,20 +82,23 @@ input, button {
   height: 100%;
   padding: 0.3em 0.5em;
   border: none;
+  color: #6B7280;
 }
 .header .searchbar .searchfield:focus {
   outline: none;
-  border: 0.5px solid #cdcdcd;
+  border: 0.5px solid #7476f6;
 }
 .header .searchbar .searchfield, .header .searchbar .search-btn {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .header .searchbar .search-btn {
   width: 20%;
   height: 100%;
   border: none;
+  border-radius: 6px;
   border-left: 1px solid #d1d5db;
   background: #f9fafb;
+  color: #374151;
 }
 .header .searchbar .search-btn:hover, .header .searchbar .search-btn:active {
   background-color: #cdcdcd;
@@ -143,11 +148,15 @@ input, button {
   grid-area: plot;
 }
 .movie-results .movie .grid .fa-star {
-  color: gold;
+  color: #FEC654;
 }
 
 .watchlist .empty {
-  top: 60%;
+  top: 50%;
+  height: 5em;
+}
+.watchlist p {
+  margin-bottom: 1em;
 }
 .watchlist a {
   color: black;
